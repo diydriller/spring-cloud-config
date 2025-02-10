@@ -7,14 +7,18 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: api-service
-          uri: lb://API-SERVICE
+        - id: user-service
+          uri: lb://USER-SERVICE
           predicates:
-            - Path=/api/**
-        - id: notification-service
-          uri: lb://NOTIFICATION-SERVICE
+            - Path=/user-service/**
+        - id: post-service
+          uri: lb://POST-SERVICE
           predicates:
-            - Path=/notification/**
+            - Path=/post-service/**
+        - id: follow-service
+          uri: lb://FOLLOW-SERVICE
+          predicates:
+            - Path=/user-service/**
   main:
     allow-bean-definition-overriding: true
     web-application-type: reactive
