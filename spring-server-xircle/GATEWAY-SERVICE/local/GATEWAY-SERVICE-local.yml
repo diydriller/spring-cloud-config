@@ -27,5 +27,6 @@ spring:
     allow-bean-definition-overriding: true
     web-application-type: reactive
 
+# jwt
 jwt:
   secret: xircle
