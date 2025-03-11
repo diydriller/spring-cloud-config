@@ -35,3 +35,6 @@ redis:
 # jwt
 jwt:
   secret: xircle
+
+server:
+  instance: DESKTOP-GLQA88R
