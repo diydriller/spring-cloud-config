@@ -14,7 +14,7 @@ spring:
 
   # kafka
   kafka:
-    bootstrap-servers: localhost:29092
+    bootstrap-servers: localhost:9092
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
@@ -28,6 +28,3 @@ spring:
       enable-auto-commit: false
     listener:
       ack-mode: manual
-
-kafka:
-  broker: localhost:29092
