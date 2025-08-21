@@ -28,3 +28,10 @@ spring:
       enable-auto-commit: false
     listener:
       ack-mode: manual
+
+# grpc
+grpc:
+  client:
+    local-grpc-server:
+      address: "static://localhost:9092"
+      negotiationType: "plaintext"

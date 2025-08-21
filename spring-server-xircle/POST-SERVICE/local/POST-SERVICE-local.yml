@@ -58,3 +58,10 @@ resilience4j.retry:
     default:
       maxAttempts: 3
       waitDuration: 100
+
+# grpc
+grpc:
+  client:
+    local-grpc-server:
+      address: "static://localhost:9094"
+      negotiationType: "plaintext"
