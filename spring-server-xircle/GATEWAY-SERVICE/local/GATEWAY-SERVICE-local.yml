@@ -1,0 +1,35 @@
+# eureka
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  cloud:
+    gateway:
+      # route
+      routes:
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user-service/**
+        - id: post-service
+          uri: lb://POST-SERVICE
+          predicates:
+            - Path=/post-service/**
+        - id: follow-service
+          uri: lb://FOLLOW-SERVICE
+          predicates:
+            - Path=/follow-service/**
+  main:
+    allow-bean-definition-overriding: true
+    web-application-type: reactive
+
+# jwt
+jwt:
+  secret: xircle

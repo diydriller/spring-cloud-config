@@ -1,0 +1,40 @@
+# eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  # mongodb
+  data:
+    mongodb:
+      host: localhost
+      port: 27018
+      database: xircle
+      authentication-database: admin
+
+  # kafka
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: chat-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+
+# redis
+redis:
+  port: 6300
+  host: localhost
+  password: redis_source
+
+# jwt
+jwt:
+  secret: xircle
+
+server:
+  instance: DESKTOP-GLQA88R
